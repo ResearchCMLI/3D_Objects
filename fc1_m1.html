@@ -32,17 +32,28 @@
     // Load a 3D model (use .glb or .gltf)
     var loader = new THREE.GLTFLoader();
 
-    // Use the correct path for the model (replace with your GitHub Pages URL if hosted there)
-    loader.load('models/Dragon 2.5_fbx.gltf', function (gltf) {  // Use 'Node.glb' if it's a .glb file
-        scene.add(gltf.scene);
+    loader.load('models/Dragon 2.5_fbx.gltf', function (gltf) {
+        var model = gltf.scene;
+        scene.add(model);
+
+        // Calculate the bounding box of the model to adjust the camera position
+        var box = new THREE.Box3().setFromObject(model);
+        var size = box.getSize(new THREE.Vector3()).length();
+        var center = box.getCenter(new THREE.Vector3());
+
+        model.position.sub(center);  // Center the model
+
+        // Adjust camera to fit the model
+        camera.position.z = size * 1.5; // Adjust distance based on model size
+        camera.lookAt(center);  // Make camera look at the center of the model
+
+        // Optionally, scale the model if it's too large or small
+        model.scale.set(1, 1, 1); // Change these values if the model needs resizing
     }, undefined, function (error) {
         console.error(error);
     });
 
-    // Set the camera position
-    camera.position.z = 5;
-
-    // Animation loop to render the scene
+    // Set up animation loop
     function animate() {
         requestAnimationFrame(animate);
         renderer.render(scene, camera);
