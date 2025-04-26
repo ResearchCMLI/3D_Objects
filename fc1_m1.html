@@ -32,7 +32,7 @@
     // Load a 3D model (use .glb or .gltf)
     var loader = new THREE.GLTFLoader();
 
-    loader.load('models/Dragon 2.5_fbx.gltf', function (gltf) {
+    loader.load('models/sample.gltf', function (gltf) {
         var model = gltf.scene;
         scene.add(model);
 
@@ -48,7 +48,7 @@
         camera.lookAt(center);  // Make camera look at the center of the model
 
         // Optionally, scale the model if it's too large or small
-        model.scale.set(0.75, 0.75, 0.75); // Change these values if the model needs resizing
+        model.scale.set(1, 1, 1); // Change these values if the model needs resizing
     }, undefined, function (error) {
         console.error(error);
     });
