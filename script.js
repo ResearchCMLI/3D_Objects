@@ -11,7 +11,7 @@ const light = new THREE.HemisphereLight(0xffffff, 0x444444, 1.2);
 scene.add(light);
 
 const loader = new GLTFLoader();
-loader.load('model.glb', function (gltf) {
+loader.load('Butterfly wall art.GLB', function (gltf) {
   scene.add(gltf.scene);
   gltf.scene.position.set(0, 0, 0);
 }, undefined, function (error) {
