@@ -16,21 +16,19 @@
     </style>
   </head>
   <body>
-   
     <model-viewer
-  src="models/exp1.glb"
-  alt="3D model"
-  camera-controls
-  camera-orbit="180deg 75deg 2.5m"
-  auto-rotate
-  auto-rotate-delay="2000"
-  environment-image="neutral"
-  exposure="1"
-  shadow-intensity="1"
-  background-color="#ffffff"
-  environment-image="https://modelviewer.dev/shared-assets/environments/neutral.hdr"
-  >
-</model-viewer>
-
+      src="models/exp1.glb"
+      alt="3D model"
+      camera-controls
+      camera-orbit="180deg 75deg 2.5m"
+      auto-rotate
+      auto-rotate-delay="2000"
+      environment-image="https://modelviewer.dev/shared-assets/environments/neutral.hdr"
+      exposure="1"
+      shadow-intensity="1"
+      background-color="#ffffff"
+      style="width: 700px; height: 800px;"  <!-- 💡 This is what was missing -->
+    >
+    </model-viewer>
   </body>
 </html>
