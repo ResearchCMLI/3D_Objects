@@ -16,11 +16,24 @@
     </style>
   </head>
   <body>
-   <model-viewer
+   <!--<model-viewer
   src="models/exp1.glb"
   alt="3D model"
   camera-controls
   camera-orbit="0deg 75deg 2.5m"
+  environment-image="neutral"
+  exposure="1"
+  shadow-intensity="1"
+  background-color="#ffffff"
+  style="width: 700px; height: 900px;">
+</model-viewer>-->
+    <model-viewer
+  src="models/exp1.glb"
+  alt="3D model"
+  camera-controls
+  camera-orbit="180deg 75deg 2.5m"
+  auto-rotate
+  auto-rotate-delay="2000"
   environment-image="neutral"
   exposure="1"
   shadow-intensity="1"
